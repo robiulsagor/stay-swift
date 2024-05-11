@@ -33,7 +33,7 @@ export default function Search({ fromList = false }) {
         </div>
       </div>
       {/* Search Button */}
-      <button className="search-btn">🔍️ Search</button>
+      <button className="search-btn">🔍️ {fromList && "Modify"} Search </button>
     </div>
   );
 }

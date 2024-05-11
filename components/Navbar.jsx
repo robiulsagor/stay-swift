@@ -23,7 +23,7 @@ export default function Navbar() {
           <Link href="#">Contact us</Link>
         </li>
         <li>
-          <Link href="./bookings.html">Bookings</Link>
+          <Link href="/bookings">Bookings</Link>
         </li>
         <li>
           <Link href="/login" className="login">
