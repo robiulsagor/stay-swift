@@ -5,7 +5,12 @@ export default function Navbar() {
   return (
     <nav>
       <Link href="/">
-        <Image src="./assets/stayswift.svg" alt="Stay Swift Logo" srcSet />
+        <Image
+          src="/stayswift.svg"
+          alt="Stay Swift Logo"
+          width={200}
+          height={200}
+        />
       </Link>
       <ul>
         <li>
@@ -21,7 +26,7 @@ export default function Navbar() {
           <Link href="./bookings.html">Bookings</Link>
         </li>
         <li>
-          <Link href="./login.html" className="login">
+          <Link href="/login" className="login">
             Login
           </Link>
         </li>
