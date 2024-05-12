@@ -1,8 +1,15 @@
+import { auth } from "@/auth";
 import PastBookings from "@/components/profile/PastBookings";
 import ProfileInfo from "@/components/profile/ProfileInfo";
 import UpcommingBookings from "@/components/profile/UpcommingBookings";
+import { redirect } from "next/navigation";
 
-export default function BookingsPage() {
+export default async function BookingsPage() {
+  const session = await auth();
+  if (!session) {
+    redirect("/login");
+  }
+
   return (
     <>
       <div>
