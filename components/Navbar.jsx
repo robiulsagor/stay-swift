@@ -1,7 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Navbar({ fromAuthPage = false }) {
+import { auth } from "@/auth";
+import Logout from "./auth/Logout";
+
+export default async function Navbar({ fromAuthPage = false }) {
+  const session = await auth();
+
   return (
     <nav>
       <Link href="/">
@@ -27,9 +32,17 @@ export default function Navbar({ fromAuthPage = false }) {
             <Link href="/bookings">Bookings</Link>
           </li>
           <li>
-            <Link href="/login" className="login">
-              Login
-            </Link>
+            {session?.user ? (
+              <div>
+                <span>{session?.user?.name} </span>
+                <span> | </span>
+                <Logout />
+              </div>
+            ) : (
+              <Link href="/login" className="login">
+                Login
+              </Link>
+            )}
           </li>
         </ul>
       )}

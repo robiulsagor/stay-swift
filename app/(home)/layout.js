@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import ToastCont from "@/components/ToastCont";
 import { connectDB } from "@/services/connectMongo";
 import { Inter } from "next/font/google";
 import "../globals.css";
@@ -18,6 +19,7 @@ export default async function RootLayout({ children }) {
       <body className={inter.className}>
         <Navbar fromAuthPage={false} />
         <main>{children}</main>
+        <ToastCont />
       </body>
     </html>
   );
